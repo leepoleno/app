@@ -1,0 +1,38 @@
+{
+  "name": "My Awesome Tracker",
+  "short_name": "Tracker",
+  "description": "Simple habit tracker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "icons": [
+    {
+      "src": "/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/1080.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Main screen"
+    },
+    {
+      "src": "/1920.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Main screen"
+    }
+  ]
+}

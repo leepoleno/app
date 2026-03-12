@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем манифест для PWA -->
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#667eea">
+</head>
+<body>
+    <!-- Ваш HTML-код без изменений -->
+    <div class="app">
+      <header>
+        <h1>My Tracker</h1>
+        <p id="taskCounter">0/0 completed</p>
+        <button id="themeToggle">🌙</button>
+      </header>
+      <div class="input-block">
+        <input id="taskInput" type="text" placeholder="Добавить задачу...">
+        <select id="category">
+          <option value="task">Task</option>
+          <option value="sleep">Sleep</option>
+          <option value="walk">Walk</option>
+        </select>
+        <button id="addBtn">+</button>
+      </div>
+      <ul id="taskList"></ul>
+    </div>
+    <!-- Подключаем скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
