@@ -3,32 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tracker</title>
+    <title>LifeTracker</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Подключаем манифест для PWA -->
     <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/192.png">
     <meta name="theme-color" content="#667eea">
 </head>
 <body>
-    <!-- Ваш HTML-код без изменений -->
     <div class="app">
-      <header>
-        <h1>My Tracker</h1>
-        <p id="taskCounter">0/0 completed</p>
-        <button id="themeToggle">🌙</button>
-      </header>
-      <div class="input-block">
-        <input id="taskInput" type="text" placeholder="Добавить задачу...">
-        <select id="category">
-          <option value="task">Task</option>
-          <option value="sleep">Sleep</option>
-          <option value="walk">Walk</option>
-        </select>
-        <button id="addBtn">+</button>
-      </div>
-      <ul id="taskList"></ul>
+        <header>
+            <h1>LifeTracker</h1>
+            <div class="header-controls">
+                <button id="themeToggle">🌙</button>
+            </div>
+        </header>
+
+        <!-- Навигация по вкладкам -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="tasks">📋 Задачи</button>
+            <button class="tab-btn" data-tab="profile">👤 Профиль</button>
+        </div>
+
+        <!-- Вкладка с задачами -->
+        <div id="tasks-tab" class="tab-content active">
+            <div class="stats-card">
+                <p id="taskCounter">0/0 выполнено</p>
+            </div>
+
+            <div class="input-block">
+                <input id="taskInput" type="text" placeholder="Что нужно сделать?">
+                <select id="priority">
+                    <option value="normal">🟢 Normal</option>
+                    <option value="urgent">🔴 Urgent</option>
+                    <option value="long-term">🔵 Long-term</option>
+                </select>
+                <button id="addBtn">➕</button>
+            </div>
+
+            <ul id="taskList"></ul>
+        </div>
+
+        <!-- Вкладка с профилем -->
+        <div id="profile-tab" class="tab-content">
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <img id="avatar" src="" alt="Avatar" class="avatar">
+                    <input type="file" id="avatarInput" accept="image/*" hidden>
+                    <button id="changeAvatarBtn" class="avatar-btn">📷</button>
+                </div>
+                <h2 id="profileName">Ваше имя</h2>
+            </div>
+
+            <form id="profileForm" class="profile-form">
+                <div class="form-group">
+                    <label>👤 Имя:</label>
+                    <input type="text" id="nameInput" placeholder="Введите ваше имя">
+                </div>
+
+                <div class="form-group">
+                    <label>🏙️ Город:</label>
+                    <input type="text" id="cityInput" placeholder="Ваш город">
+                </div>
+
+                <div class="form-group">
+                    <label>📧 Email:</label>
+                    <input type="email" id="emailInput" placeholder="email@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                </div>
+
+                <div class="form-group">
+                    <label>📱 Телефон:</label>
+                    <input type="tel" id="phoneInput" placeholder="+7 (999) 999-99-99" pattern="\+7\s?[\(]?\d{3}[\)]?\s?\d{3}[\s-]?\d{2}[\s-]?\d{2}">
+                </div>
+
+                <button type="submit" class="save-btn">💾 Сохранить профиль</button>
+            </form>
+
+            <div class="profile-info">
+                <h3>📊 Статистика:</h3>
+                <p>Всего задач: <span id="totalTasks">0</span></p>
+                <p>Выполнено: <span id="completedTasks">0</span></p>
+                <p>Процент выполнения: <span id="completionRate">0%</span></p>
+            </div>
+        </div>
     </div>
-    <!-- Подключаем скрипт -->
+
     <script src="script.js"></script>
 </body>
 </html>

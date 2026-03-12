@@ -1,7 +1,7 @@
 {
-  "name": "My Awesome Tracker",
+  "name": "LifeTracker",
   "short_name": "Tracker",
-  "description": "Simple habit tracker",
+  "description": "Персональный трекер задач и профиля",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -16,7 +16,8 @@
     {
       "src": "/512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "screenshots": [
@@ -25,14 +26,14 @@
       "sizes": "1080x1920",
       "type": "image/png",
       "platform": "wide",
-      "label": "Main screen"
+      "label": "Главный экран"
     },
     {
       "src": "/1920.png",
       "sizes": "1920x1080",
       "type": "image/png",
       "platform": "wide",
-      "label": "Main screen"
+      "label": "Экран задач"
     }
   ]
 }
